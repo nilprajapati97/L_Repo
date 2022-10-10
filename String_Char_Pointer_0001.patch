@@ -1,0 +1,139 @@
+// Today is Monday
+10001 = 'T'
+10002 = 'o'
+10003 = 'd'
+10004 = 'a'
+10005 = 'y'
+10006 = ' '
+10007 = 'i'
+10008 = 's'
+10009 = ' '
+10010 = 'M'
+10011 = 'o'
+10012 = 'n'
+10013 = 'd'
+10014 = 'a'
+10015 = 'y'
+10016 = '\0'
+
+
+ch + 0	= 10001  ch[0] ='T'
+ch + 1  = 10002  ch[1] ='o'
+
+
+
+//Today is Monday 
+#include <stdio.h>
+
+int main()
+{
+    char ch[25] = "Today is Monday";
+    int i=0;
+    printf("String:%s\n",ch);
+    
+    for(i=0  ; ch[i]!='\0';  i++   )
+    {
+       ;
+    }
+    i--;
+    
+    printf("Length:%d\n",i);
+    return 0;
+}
+
+============================================================
+With functions
+
+returntype funname (argument)
+
+
+Types of Function
+
+
+returntype funname (argument)
+returntype funname (void)
+void 	   funname (argument)
+void  	   funname (void)
+
+
+string len -: returntype funname (argument)
+
+//Today is Monday 
+#include <stdio.h>
+
+int my_fun(char []) ; // Prototype
+
+
+int main()
+{
+    char ch[25] = "Today is Monday";
+    int i=0, len;
+    printf("String:%s\n",ch);
+	
+    len = my_fun(ch);  // function Call 
+    
+    printf("Length:%d\n",len);
+    return 0;
+}
+int my_fun(char ptr[ ])  // function body
+{
+	int i ,len ;
+	
+	//T     o   d   a   y  space  i s   space  M    o   n   d   a   y  \0 
+//	  0     1   2   3   4   5     6 7     8    9    10  11  12  13  14  15
+ 
+   printf("Print char:::\n");
+    for(i=0  ; ptr[i]!='\0';  i++   )
+    {
+       printf("%d=%c\n",i,ptr[i]);
+    }
+    printf("Print char Done:::\n\n\n");
+
+
+	printf("In function i=%d\n", i);
+    
+    //len = i--;   // len= assign 1st = decement
+    len = i-1;   // len= assign 1st = decement
+    
+    printf("In function Length=%d\n", len);
+    printf("In After function i=%d\n", i);
+
+    return len;
+ 
+}
+
+
+=====================================================================
+
+ for(i=0  ; ptr[i]!= 0 ;  i++   ) ;
+ 
+ 
+ 
+ int my_fun(char ptr[ ])  // function body
+{
+	int i =0 ,len ;
+	
+	//T     o   d   a   y  space  i s   space  M    o   n   d   a   y  \0 
+//	  0     1   2   3   4   5     6 7     8    9    10  11  12  13  14  15
+ 
+   
+    for(    ;ptr[++i] ;   ) ;
+   
+  
+    len = i-1;   // len= assign 1st = decement
+    
+   
+
+    return len;
+ 
+}
+
+
+
+
+
+
+
+
+
+

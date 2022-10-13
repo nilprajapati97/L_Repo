@@ -1,0 +1,170 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+
+A[] = "I am in Banhgalore"
+B[] = "I am in India"
+
+       The strcpy() function copies the string pointed to by src,
+       including the terminating null byte ('\0'), to the buffer pointed
+       to by dest.  The strings may not overlap, and the destination
+       string dest must be large enough to receive the copy.  Beware of
+       buffer overruns!  (See BUGS.)
+
+       The strncpy() function is similar, except that at most n bytes of
+       src are copied.  Warning: If there is no null byte among the
+       first n bytes of src, the string placed in dest will not be null-
+       terminated.
+
+       If the length of src is less than n, strncpy() writes additional
+       null bytes to dest to ensure that a total of n bytes are written.
+
+
+
+strcpy =    char *strcpy(char *restrict dest, const char *src);
+strncpy=
+*******************************************************************************/
+#include <stdio.h>
+char * my_strcpy(char *, const char * ); // Prototype
+
+int main()
+{
+    char a[30] ="I am in Bangalore";
+    char b[30]= "I am in india";
+    char *p;
+    
+    printf("Hello World");
+    
+    printf("Before :\n%s\n%s\n",a,b);
+    printf("Before :\n%s\n%s\n\n",a,b);
+    
+    //p = my_strcpy(a,b);
+    p = my_strcpy(b,a);
+    printf("After address :a=%x\n    b=%x  p= %x \n",a,b,p);
+    
+    printf("After :\na=%s\nb=%s\np=%s\n",a,b,p);
+    
+    return 0;
+}
+
+char * my_strcpy(char * dest, const char * src )
+
+{
+    int i;
+    char *ptr= NULL;
+    for(i=0;    src[i]  ;  i++ )
+    {
+        dest[i] =   src[i];
+    }
+        dest[i] =   src[i];
+        
+    //    dest[i] =   '\0';
+    
+    ptr=dest;
+    return ptr;
+    
+ }
+/////////////////////////////////////
+
+Output
+
+Hello WorldBefore :
+I am in Bangalore
+I am in india
+Before :
+I am in Bangalore
+I am in india
+
+After address :a=e5df5380
+    b=e5df53a0  p= e5df5380 
+After :
+a=I am in india
+b=I am in india
+p=I am in india
+
+
+******************************************************************************************
+
+/******************************************************************************
+
+Welcome to GDB Online.
+
+A[] = "I am in Banhgalore"
+B[] = "I am in India"
+
+
+
+strcpy =    char *strcpy(char *restrict dest, const char *src);
+
+
+strncpy=
+*******************************************************************************/
+#include <stdio.h>
+char * my_strcpy(char *, const char * ); // Prototype
+
+int main()
+{
+    char a[] ="I am in Bangalore";
+    char b[]= "I am in india";
+    char *p;
+    
+    printf("Hello World");
+    
+    printf("Before :\na=%s\nb=%s\n",a,b);
+    printf("Before :\na=%s\nb=%s\n\n",a,b);
+    
+    
+    p = my_strcpy(b,a);
+    printf("After address :a=%x\n    b=%x  p= %x \n",a,b,p);
+    
+    printf("After :\na=%s\nb=%s\np=%s\n",a,b,p);
+    
+    return 0;
+}
+
+char * my_strcpy(char * dest, const char * src )
+
+{
+    int i;
+    char *ptr= NULL;
+    for(i=0;    src[i]  ;  i++ )
+    {
+        dest[i] =   src[i];
+    }
+        dest[i] =   src[i];
+        
+    //    dest[i] =   '\0';
+    
+    ptr=dest;
+    return ptr;
+    
+ }
+##################################
+
+Hello WorldBefore :
+a=I am in Bangalore
+b=I am in india
+Before :
+a=I am in Bangalore
+b=I am in india
+
+After address :a=35359ec0
+    b=35359eb2  p= 35359eb2 
+After :
+a=ore
+b=I am in Bangalore
+p=I am in Bangalore
+*********************************
+
+Defect-: 
+		1. Why a is affected?
+		2. We destination string length is small compare to source. We need only data of destination string length. 
+		3. Beware of buffer overruns!  (See BUGS.)
+
+
+
+
+
+
+
+

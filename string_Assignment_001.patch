@@ -1,0 +1,14 @@
+D	strlen()	It returns the string's length.
+H	strnlen()	It returns the specified value if the value specified is less than the string length, otherwise the string length.
+	strcmp()	It compares two strings and returns 0 if the strings are the same.
+	strncmp()	It compares two strings only to n characters.
+	strcat()	It concatenates two strings and returns the concatenated string.
+	strncat()	It concatenates n characters of one string to another string.
+D	strcpy()	It copies one string into another.
+N	strncpy()	It copies the first n characters of one string into another.
+D	strchr()	It finds out the first occurrence of a given character in a string.
+D	strrchr()	It finds out the last occurrence of a given character in a string.
+	strstr()	It finds out the first occurrence of a given string in a string.
+	strnstr()	It finds out the first occurrence of a given string in a string where the search is limited to n characters.
+	strcasecmp()	It compares two strings without sensitivity to the case.
+	strncasecmp()	It compares n characters of one string to another without sensitivity to the case.

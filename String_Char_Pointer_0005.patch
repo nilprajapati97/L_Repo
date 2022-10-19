@@ -1,0 +1,209 @@
+
+
+
+
+1. const char *ptr 
+	: This is a pointer to a constant character. 
+	You cannot change the value pointed by ptr, but you can change the pointer itself.
+	“const char *” is a (non-const) pointer to a const char.
+	
+Example
+-------------
+
+// C program to illustrate
+// char const *p
+#include<stdio.h>
+#include<stdlib.h>
+ 
+int main()
+{
+    char a ='A', b ='B';
+    const char *ptr = &a;
+     
+    //*ptr = b; illegal statement (assignment of read-only location *ptr)
+     
+    // ptr can be changed
+    printf( "value pointed to by ptr: %c\n", *ptr);
+   //1  ptr = &b;
+   //2  *ptr = 'X';
+        a='X';
+    printf( "value pointed to by ptr: %c\n", *ptr);
+}
+
+NOTE: There is no difference between const char *p and char const *p as
+	   both are pointer to a const char and position of ‘*'(asterik) is also same. 
+****************************************************************************************************	   
+2. char *const ptr : value= vary   pointer= const 
+		This is a constant pointer to non-constant character.
+	You cannot change the pointer p, but can change the value pointed by ptr. 	   
+
+// C program to illustrate
+// char* const p
+#include<stdio.h>
+#include<stdlib.h>
+ 
+int main()
+{
+    char a ='A', b ='B';
+    char *const ptr;
+    printf( "Value pointed to by ptr: %c\n", *ptr);
+    printf( "Address ptr is pointing to: %d\n\n", ptr);
+ 
+    //ptr = &b; illegal statement (assignment of read-only variable ptr)
+ 
+    // changing the value at the address ptr is pointing to
+    //1 *ptr = b;
+    //2   ptr = &b;
+    // ptr =&b; 
+    printf( "Value pointed to by ptr: %c\n", *ptr);
+    printf( "Address ptr is pointing to: %d\n", ptr);
+********************************************************************************
+3. const char * const ptr :
+		This is a constant pointer to constant character.
+		You can neither change the value pointed by ptr nor the pointer ptr. 
+
+     char a='A' , b='B';
+	 
+	 const char * const ptr =&b;
+	 
+// C program to illustrate
+//const char * const ptr
+#include<stdio.h>
+#include<stdlib.h>
+ 
+int main()
+{
+    char a ='A', b ='B';
+    const char *const ptr = &a;
+     
+    printf( "Value pointed to by ptr: %c\n", *ptr);
+    printf( "Address ptr is pointing to: %d\n\n", ptr);
+ 
+    // ptr = &b; illegal statement (assignment of read-only variable ptr)
+    // *ptr = b; illegal statement (assignment of read-only location *ptr)
+ 
+}
+
+=========================================================================================
+
+String 
+Function
+Pointers and constant
+
+Normal Function
+************************************
+/*
+
+
+5 = 
+   5x4x3x2x1=120 
+*/
+#include<stdio.h>
+int fact(int);
+int main()
+{
+    int x,n;
+    printf(" Enter the Number to Find Factorial :");
+    scanf("%d",&n);
+    x=fact(n);
+    printf(" Factorial of %d is %d",n,x);
+    return 0;
+}
+int fact(int n)
+{
+    //5x4x3x2x1=120
+    int i, sum=1;
+   for(i=1 ;    i<=n    ;i++  )    
+    {
+        sum= sum * i;
+    }
+  printf("In Function Sum=%d\n",sum);    
+ return sum;   
+}
+**************************************
+
+/*
+5 = 
+   5x4x3x2x1=120 
+*/
+
+#include<stdio.h>
+int fact(int);
+int main()
+{
+    int x,n;
+    printf(" Enter the Number to Find Factorial :");
+    scanf("%d",&n);
+    x=fact(n);
+    printf(" Factorial of %d is %d",n,x);
+    return 0;
+}
+int fact(int n)
+{
+    //5x4x3x2x1=120
+    int sum=1;
+    
+   while(n)
+    {
+        sum= sum * n--;
+    }
+  printf("In Function Sum=%d\n",sum);    
+ return sum;   
+}
+*******************************************************
+
+factor
+   
+   5
+	if (5!=0)
+		sum= sum * 5
+		  n--
+		  
+		  if (4!=0)
+			sum= sum * 4
+			n--
+				
+				if (3!=0)
+				sum= sum * 3
+				n--
+	
+					if (2!=0)
+					sum= sum * 2
+						n--
+					
+						if (1!=0)
+						sum= sum * 1
+						n--
+
+							if (0!=0)
+							{	sum= sum * 4
+								n--
+							}	
+							else
+							{
+								return sum;
+							}
+
+***************************************
+Recursion Function 
+************************
+#include<stdio.h>
+int fact(int);
+int main()
+{
+    int x,n;
+    printf(" Enter the Number to Find Factorial :");
+    scanf("%d",&n);
+    x=fact(n);
+    printf(" Factorial of %d is %d",n,x);
+    return 0;
+}
+int fact(int n)
+{
+    if(n==0)
+        return(1);
+    return(n*fact(n-1));
+}
+
+
+

@@ -1,0 +1,100 @@
+#include<stdio.h>
+int main(){
+   /* 2D array declaration*/
+   /* int disp[3]={3,2,4};   1D[i][j]
+		1 2 3   1D -: 1D[0]  1D[0][0]	1D[0][1]	1D[0][2]
+		4 5 6   1D -: 1D[1]	 1D[1][0]	1D[1][1]	1D[2][2]
+		7 8 9   1D -: 1D[2]  1D[2][0]	1D[2][1]	1D[2][2]
+   
+   */
+   
+   int disp[2][3];
+   /*Counter variables for the loop*/
+   int i, j;
+   for(i=0; i<2; i++) {  // How many 1D array
+      for(j=0;j<3;j++) { // each 1D array
+         printf("Enter value for disp[%d][%d]:", i, j);
+         scanf("%d", &disp[i][j]);
+      }
+   }
+   //Displaying array elements
+   printf("Two Dimensional array elements:\n");
+   for(i=0; i<2; i++) {
+      for(j=0;j<3;j++) {
+         printf("%d ", disp[i][j]);
+         if(j==2){
+            printf("\n");
+         }
+      }
+   }
+   return 0;
+}
+
+Output=:
+----------------
+Enter value for disp[0][0]:32
+Enter value for disp[0][1]:54
+Enter value for disp[0][2]:32
+Enter value for disp[1][0]:33
+Enter value for disp[1][1]:22
+Enter value for disp[1][2]:56
+Two Dimensional array elements:
+32 54 32 
+33 22 56 
+
+
+int disp[2][4] = { 10, 11, 12, 13, 14, 15, 16, 17};
+ Value -:  0 one D array  = {10,11,12,13}
+           1 one D array  = {14,15,16,17}
+		   
+/* Valid declaration*/
+int abc[2][2] = {1, 2, 3 ,4 }  
+/* Valid declaration*/ 
+int abc[][2] = {1, 2, 3 ,4 }  
+/* Invalid declaration – you must specify second dimension*/
+int abc[][] = {1, 2, 3 ,4 }   
+/* Invalid because of the same reason  mentioned above*/
+int abc[2][] = {1, 2, 3 ,4 }
+
+2 D array allocation memory consicutivel
+ 
+ int abc [2][2] = {1, 2, 3 ,4 }
+ abc [0][0] == address => 00010 == Value -->> 1
+ abc [0][1] == address => 00014 == Value -->> 2
+ abc [1][0] == address => 00018 == Value -->> 3
+ abc [1][1] == address => 00022 == Value -->> 4
+ 
+ 
+ int abc[5][4] ={
+            {0,1,2,3},
+            {4,5,6,7},
+            {8,9,10,11},
+            {12,13,14,15},
+            {16,17,18,19}
+            };
+            
+			
+-------------------
+
+Problems -: How to store string in one 1D array
+			How to stire 5 frnds name into 2d array
+			take function and assign 3 strings under function.
+			
+			3 names -: Scanf
+			            with scanf but in function
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

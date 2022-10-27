@@ -1,0 +1,66 @@
+If there is a situation where only 5 elements are
+ needed to be entered in this array. In this case, 
+ the remaining 4 indices are just wasting memory in
+ this array. So there is a requirement to 
+lessen the length (size) of the array from 9 to 5.
+
+Take another situation. In this, there is an array of 9
+elements with all 9 indices filled. But there is a need to enter
+ 3 more elements in this array. In this case, 3 indices more 
+ are required. So the length (size) of the array needs to be 
+ changed from 9 to 12.
+ 
+ 
+malloc() -: To allocate dynamically memory
+calloc() -: To allocate dynamically memory 
+free()    - To frree dynamically allocated memory
+realloc() -: Reallocation of heap memory 
+
+char ch[10] ;   malloc - memory of 10 bytes  = Grabage value of each content of array -- Faster
+				Calloc - memory of 10 bytes  = Zero value of each content of array -- Slower
+				Free -:  Free allocated memory
+				realloc -:  Re + alloc =: realloc(ch,20)
+				
+
+
+SYNOPSIS         top
+       #include <stdlib.h>
+
+       void *malloc(size_t size);
+       void free(void *ptr);
+       void *calloc(size_t nmemb, size_t size);
+       void *realloc(void *ptr, size_t size);
+       void *reallocarray(void *ptr, size_t nmemb, size_t size);
+	   
+void *malloc(size_t size); -:
+	    To do -: allocates size bytes and returns a pointer to the allocated memory.
+			If size is 0, then malloc() returns either NULL.
+		
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char *p;
+    p  =  (char *) malloc (10);
+    printf("Enter string :");
+    scanf("%s",p);
+    printf("Hello World =: %s\n",p);
+    return 0;
+}
+------------------------------------------------
+    1. Allocate pointer with hold 10 interger value from user input
+	2. Allocate 25 char string using malloca and reverse the string in same pointer
+	      ANil
+	 	  LiNA
+    3. Alloacte integer array dynamically doe 10 bytes (Malloc) , Give input from user
+	   and print, after print make logic for delete dupplicate entry from array.
+	   
+	     1 2 3 4 2 1 4 5 9 2 == Input
+		 
+		 1 2 3 4 5 9 = Output
+	   
+	   
+
+
+	

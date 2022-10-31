@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int *p,i;
+    p  =  (int  *) calloc (5);
+    
+    printf("Before Allocation with malloc:");
+    for(i=0;i<5;i++)
+        printf("%d ",p[i]);
+    printf("\n");
+    
+    printf("After Allocation with malloc:");
+    for(i=0;i<5;i++)
+        scanf("%d",&p[i]);
+    printf("\n");
+    
+    printf("Print Values:");
+    for(i=0;i<5;i++)
+        printf("%d ",p[i]);
+    printf("\n");    
+    
+    return 0;
+}
+
+
+Calloc=
+=================
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int *p,i;
+    p  =  (int  *) calloc (1 , 5);
+            //    1 content and in each content 4 integer
+    
+    //p  =  (int  *) calloc (2 , 5);
+       1 2 3 4 5        1 3 4 2 5  == 40 bytes
+     
+    
+    printf("Before Allocation with malloc:");
+    for(i=0;i<5;i++)
+        printf("%d ",p[i]);
+    printf("\n");
+    
+    printf("After Allocation with malloc:");
+    for(i=0;i<5;i++)
+        scanf("%d",&p[i]);
+    printf("\n");
+    
+    printf("Print Values:");
+    for(i=0;i<5;i++)
+        printf("%d ",p[i]);
+    printf("\n");    
+    
+    return 0;
+}
+
+
